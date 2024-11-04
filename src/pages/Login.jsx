@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Eye, EyeOff } from 'lucide-react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [credentials, setCredentials] = useState({ email: '', password: '' });
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 
   const handleSignIn = (e) => {
     // e.preventDefault();
     // Add authentication logic here
-    navigate('/');
+    navigate("/");
   };
 
   return (
@@ -31,10 +31,16 @@ const Login = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); handleSignIn(); }}>
+          <form
+            className="space-y-6"
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSignIn();
+            }}
+          >
             <div>
-              <label 
-                htmlFor="email" 
+              <label
+                htmlFor="email"
                 className="block text-sm font-medium text-gray-700"
               >
                 Email address
@@ -47,17 +53,19 @@ const Login = () => {
                   autoComplete="email"
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-navy-500 focus:border-navy-500 sm:text-sm"
                   value={credentials.email}
-                  onChange={(e) => setCredentials({
-                    ...credentials,
-                    email: e.target.value
-                  })}
+                  onChange={(e) =>
+                    setCredentials({
+                      ...credentials,
+                      email: e.target.value,
+                    })
+                  }
                 />
               </div>
             </div>
 
             <div>
-              <label 
-                htmlFor="password" 
+              <label
+                htmlFor="password"
                 className="block text-sm font-medium text-gray-700"
               >
                 Password
@@ -66,15 +74,17 @@ const Login = () => {
                 <input
                   id="password"
                   name="password"
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   autoComplete="current-password"
-                //   required
+                  //   required
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-navy-500 focus:border-navy-500 sm:text-sm"
                   value={credentials.password}
-                  onChange={(e) => setCredentials({
-                    ...credentials,
-                    password: e.target.value
-                  })}
+                  onChange={(e) =>
+                    setCredentials({
+                      ...credentials,
+                      password: e.target.value,
+                    })
+                  }
                 />
                 <button
                   type="button"
@@ -98,8 +108,8 @@ const Login = () => {
                   type="checkbox"
                   className="h-4 w-4 text-navy-600 focus:ring-navy-500 border-gray-300 rounded"
                 />
-                <label 
-                  htmlFor="remember-me" 
+                <label
+                  htmlFor="remember-me"
                   className="ml-2 block text-sm text-gray-900"
                 >
                   Remember me
@@ -107,8 +117,8 @@ const Login = () => {
               </div>
 
               <div className="text-sm">
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   className="font-medium text-navy-600 hover:text-navy-500"
                 >
                   Forgot your password?

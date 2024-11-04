@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
-import { 
-  Search, Filter, Calendar, Download,
-  ChevronDown, ChevronUp, FileText, Eye,
-  Download as DownloadIcon, Trash2
-} from 'lucide-react';
+import React, { useState } from "react";
+import {
+  Search,
+  Filter,
+  Calendar,
+  Download,
+  ChevronDown,
+  ChevronUp,
+  FileText,
+  Eye,
+  Download as DownloadIcon,
+  Trash2,
+} from "lucide-react";
 
 const ArchivePage = () => {
   const [selectedFilters, setSelectedFilters] = useState({
-    dateRange: '',
-    requestType: '',
-    department: '',
-    status: ''
+    dateRange: "",
+    requestType: "",
+    department: "",
+    status: "",
   });
 
   const [expandedRow, setExpandedRow] = useState(null);
@@ -18,31 +25,39 @@ const ArchivePage = () => {
 
   const archivedRequests = [
     {
-      id: 'REQ-2024-001',
-      customer: 'Acme Corp',
-      type: 'COI',
-      submissionDate: '2024-01-15',
-      completionDate: '2024-01-20',
-      status: 'Completed',
-      department: 'Sales',
+      id: "REQ-2024-001",
+      customer: "Acme Corp",
+      type: "COI",
+      submissionDate: "2024-01-15",
+      completionDate: "2024-01-20",
+      status: "Completed",
+      department: "Sales",
       documents: [
-        { name: 'Insurance Certificate.pdf', size: '2.4 MB', date: '2024-01-15' },
-        { name: 'Additional Documentation.pdf', size: '1.1 MB', date: '2024-01-16' }
-      ]
+        {
+          name: "Insurance Certificate.pdf",
+          size: "2.4 MB",
+          date: "2024-01-15",
+        },
+        {
+          name: "Additional Documentation.pdf",
+          size: "1.1 MB",
+          date: "2024-01-16",
+        },
+      ],
     },
     {
-      id: 'REQ-2024-002',
-      customer: 'TechCo Inc',
-      type: 'Form',
-      submissionDate: '2024-01-16',
-      completionDate: '2024-01-22',
-      status: 'Rejected',
-      department: 'Operations',
+      id: "REQ-2024-002",
+      customer: "TechCo Inc",
+      type: "Form",
+      submissionDate: "2024-01-16",
+      completionDate: "2024-01-22",
+      status: "Rejected",
+      department: "Operations",
       documents: [
-        { name: 'W9 Form.pdf', size: '1.2 MB', date: '2024-01-16' },
-        { name: 'Rejection Notice.pdf', size: '0.5 MB', date: '2024-01-22' }
-      ]
-    }
+        { name: "W9 Form.pdf", size: "1.2 MB", date: "2024-01-16" },
+        { name: "Rejection Notice.pdf", size: "0.5 MB", date: "2024-01-22" },
+      ],
+    },
   ];
 
   const toggleRowExpansion = (id) => {
@@ -51,7 +66,7 @@ const ArchivePage = () => {
 
   const toggleItemSelection = (id) => {
     if (selectedItems.includes(id)) {
-      setSelectedItems(selectedItems.filter(item => item !== id));
+      setSelectedItems(selectedItems.filter((item) => item !== id));
     } else {
       setSelectedItems([...selectedItems, id]);
     }
@@ -68,14 +83,14 @@ const ArchivePage = () => {
           </p>
         </div>
         <div className="flex items-center space-x-4">
-          <button 
+          <button
             className="flex items-center space-x-2 px-4 py-2 border rounded-lg hover:bg-gray-50"
             disabled={selectedItems.length === 0}
           >
             <Download className="w-4 h-4" />
             <span>Export Selected</span>
           </button>
-          <button 
+          <button
             className="flex items-center space-x-2 px-4 py-2 border rounded-lg hover:bg-gray-50 text-red-600"
             disabled={selectedItems.length === 0}
           >
@@ -106,13 +121,20 @@ const ArchivePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Date Range</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Date Range
+              </label>
               <div className="relative">
                 <Calendar className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
                 <select
                   className="pl-10 block w-full rounded-md border border-gray-300 px-3 py-2"
                   value={selectedFilters.dateRange}
-                  onChange={(e) => setSelectedFilters({...selectedFilters, dateRange: e.target.value})}
+                  onChange={(e) =>
+                    setSelectedFilters({
+                      ...selectedFilters,
+                      dateRange: e.target.value,
+                    })
+                  }
                 >
                   <option value="">All Time</option>
                   <option value="last-week">Last Week</option>
@@ -125,11 +147,18 @@ const ArchivePage = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Request Type</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Request Type
+              </label>
               <select
                 className="block w-full rounded-md border border-gray-300 px-3 py-2"
                 value={selectedFilters.requestType}
-                onChange={(e) => setSelectedFilters({...selectedFilters, requestType: e.target.value})}
+                onChange={(e) =>
+                  setSelectedFilters({
+                    ...selectedFilters,
+                    requestType: e.target.value,
+                  })
+                }
               >
                 <option value="">All Types</option>
                 <option value="coi">COI</option>
@@ -139,11 +168,18 @@ const ArchivePage = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Department</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Department
+              </label>
               <select
                 className="block w-full rounded-md border border-gray-300 px-3 py-2"
                 value={selectedFilters.department}
-                onChange={(e) => setSelectedFilters({...selectedFilters, department: e.target.value})}
+                onChange={(e) =>
+                  setSelectedFilters({
+                    ...selectedFilters,
+                    department: e.target.value,
+                  })
+                }
               >
                 <option value="">All Departments</option>
                 <option value="sales">Sales</option>
@@ -153,11 +189,18 @@ const ArchivePage = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Status
+              </label>
               <select
                 className="block w-full rounded-md border border-gray-300 px-3 py-2"
                 value={selectedFilters.status}
-                onChange={(e) => setSelectedFilters({...selectedFilters, status: e.target.value})}
+                onChange={(e) =>
+                  setSelectedFilters({
+                    ...selectedFilters,
+                    status: e.target.value,
+                  })
+                }
               >
                 <option value="">All Statuses</option>
                 <option value="completed">Completed</option>
@@ -183,7 +226,7 @@ const ArchivePage = () => {
                     if (selectedItems.length === archivedRequests.length) {
                       setSelectedItems([]);
                     } else {
-                      setSelectedItems(archivedRequests.map(req => req.id));
+                      setSelectedItems(archivedRequests.map((req) => req.id));
                     }
                   }}
                 />
@@ -211,7 +254,9 @@ const ArchivePage = () => {
           <tbody className="divide-y divide-gray-200">
             {archivedRequests.map((request) => (
               <React.Fragment key={request.id}>
-                <tr className={`hover:bg-gray-50 ${expandedRow === request.id ? 'bg-gray-50' : ''}`}>
+                <tr
+                  className={`hover:bg-gray-50 ${expandedRow === request.id ? "bg-gray-50" : ""}`}
+                >
                   <td className="px-6 py-4">
                     <input
                       type="checkbox"
@@ -222,7 +267,7 @@ const ArchivePage = () => {
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center">
-                      <button 
+                      <button
                         onClick={() => toggleRowExpansion(request.id)}
                         className="mr-2"
                       >
@@ -233,26 +278,34 @@ const ArchivePage = () => {
                         )}
                       </button>
                       <div>
-                        <div className="text-sm font-medium text-gray-900">{request.id}</div>
-                        <div className="text-sm text-gray-500">{request.customer}</div>
+                        <div className="text-sm font-medium text-gray-900">
+                          {request.id}
+                        </div>
+                        <div className="text-sm text-gray-500">
+                          {request.customer}
+                        </div>
                       </div>
                     </div>
                   </td>
                   <td className="px-6 py-4">
-                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                      request.type === 'COI' 
-                        ? 'bg-blue-100 text-blue-800'
-                        : 'bg-purple-100 text-purple-800'
-                    }`}>
+                    <span
+                      className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                        request.type === "COI"
+                          ? "bg-blue-100 text-blue-800"
+                          : "bg-purple-100 text-purple-800"
+                      }`}
+                    >
                       {request.type}
                     </span>
                   </td>
                   <td className="px-6 py-4">
-                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                      request.status === 'Completed'
-                        ? 'bg-green-100 text-green-800'
-                        : 'bg-red-100 text-red-800'
-                    }`}>
+                    <span
+                      className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                        request.status === "Completed"
+                          ? "bg-green-100 text-green-800"
+                          : "bg-red-100 text-red-800"
+                      }`}
+                    >
                       {request.status}
                     </span>
                   </td>
@@ -280,15 +333,24 @@ const ArchivePage = () => {
                   <tr className="bg-gray-50">
                     <td colSpan="7" className="px-6 py-4">
                       <div className="space-y-4">
-                        <h4 className="text-sm font-medium text-gray-900">Associated Documents</h4>
+                        <h4 className="text-sm font-medium text-gray-900">
+                          Associated Documents
+                        </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {request.documents.map((doc, index) => (
-                            <div key={index} className="flex items-center justify-between p-3 bg-white rounded-lg border">
+                            <div
+                              key={index}
+                              className="flex items-center justify-between p-3 bg-white rounded-lg border"
+                            >
                               <div className="flex items-center space-x-3">
                                 <FileText className="w-5 h-5 text-gray-400" />
                                 <div>
-                                  <div className="text-sm font-medium text-gray-900">{doc.name}</div>
-                                  <div className="text-sm text-gray-500">{doc.size} • {doc.date}</div>
+                                  <div className="text-sm font-medium text-gray-900">
+                                    {doc.name}
+                                  </div>
+                                  <div className="text-sm text-gray-500">
+                                    {doc.size} • {doc.date}
+                                  </div>
                                 </div>
                               </div>
                               <button className="p-1 hover:bg-gray-100 rounded">
