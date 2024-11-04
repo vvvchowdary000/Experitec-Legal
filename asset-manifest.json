@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Experitec-Legal/static/css/main.0bed8fcc.css",
+    "main.js": "/Experitec-Legal/static/js/main.dc37b0db.js",
+    "static/js/453.30e7ebe4.chunk.js": "/Experitec-Legal/static/js/453.30e7ebe4.chunk.js",
+    "static/media/profile_icon.jpg": "/Experitec-Legal/static/media/profile_icon.91cfcd7c80de0bdb8ab3.jpg",
+    "index.html": "/Experitec-Legal/index.html",
+    "main.0bed8fcc.css.map": "/Experitec-Legal/static/css/main.0bed8fcc.css.map",
+    "main.dc37b0db.js.map": "/Experitec-Legal/static/js/main.dc37b0db.js.map",
+    "453.30e7ebe4.chunk.js.map": "/Experitec-Legal/static/js/453.30e7ebe4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0bed8fcc.css",
+    "static/js/main.dc37b0db.js"
+  ]
+}
