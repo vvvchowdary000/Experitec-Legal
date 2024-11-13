@@ -387,7 +387,7 @@ const Dashboard = () => {
               </td>
               <td className="p-4">11</td>
               <td className="p-4">11/14/2024</td>
-              <td className="p-4">11/02/2024</td>
+              <td className="p-4">11/15/2024</td>
               <td className="p-4">
                 <div className="flex gap-2">
                   <Eye className="h-4 w-4 cursor-pointer" />
@@ -429,7 +429,7 @@ const Dashboard = () => {
               </td>
               <td className="p-4">4</td>
               <td className="p-4">-</td>
-              <td className="p-4">11/08/2024</td>
+              <td className="p-4">11/15/2024</td>
               <td className="p-4">
                 <div className="flex gap-2">
                   <Eye className="h-4 w-4 cursor-pointer" />
@@ -471,7 +471,7 @@ const Dashboard = () => {
               </td>
               <td className="p-4">3</td>
               <td className="p-4">-</td>
-              <td className="p-4">11/09/2024</td>
+              <td className="p-4">11/14/2024</td>
               <td className="p-4">
                 <div className="flex gap-2">
                   <Eye className="h-4 w-4 cursor-pointer" />
@@ -553,7 +553,7 @@ const Dashboard = () => {
               </td>
               <td className="p-4">2</td>
               <td className="p-4">-</td>
-              <td className="p-4">11/11/2024</td>
+              <td className="p-4">11/17/2024</td>
               <td className="p-4">
                 <div className="flex gap-2">
                   <Eye className="h-4 w-4 cursor-pointer" />
