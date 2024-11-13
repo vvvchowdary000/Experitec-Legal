@@ -11,6 +11,7 @@ import {
   BookOpen,
   FileQuestion,
   BarChart,
+  OctagonMinusIcon
 } from "lucide-react";
 import {
   Card,
@@ -237,7 +238,7 @@ const Dashboard = () => {
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-gray-500">
-              Pending Internal Reviews
+              Not Started
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -254,7 +255,7 @@ const Dashboard = () => {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">7</div>
-            <p className="text-xs text-gray-500">3 high priority</p>
+            <p className="text-xs text-gray-500">Follow Up</p>
           </CardContent>
         </Card>
 
@@ -306,13 +307,16 @@ const Dashboard = () => {
               <th className="w-8 px-6 py-3">
                 <input type="checkbox" className="rounded border-gray-300" />
               </th>
+              <th className="text-left p-4 border-b">Received Date</th>
               <th className="text-left p-4 border-b">Request ID</th>
               <th className="text-left p-4 border-b">Customer Name</th>
               <th className="text-left p-4 border-b">Type</th>
               <th className="text-left p-4 border-b">Subject</th>
               <th className="text-left p-4 border-b">Requester</th>
               <th className="text-left p-4 border-b">Status</th>
-              <th className="text-left p-4 border-b">Received Date</th>
+              <th className="text-left p-4 border-b">Days Aged</th>
+              <th className="text-left p-4 border-b">Follow Up Date</th>
+              <th className="text-left p-4 border-b">Due Date</th>
               <th className="text-left p-4 border-b">Documents</th>
               <th className="text-left p-4 border-b mr-4">Actions</th>
               <th className="text-left p-4 border-b"></th>
@@ -327,6 +331,7 @@ const Dashboard = () => {
                   className="rounded border-gray-300"
                 ></input>
               </td>
+              <td className="p-4">11/10/2024</td>
               <td className="p-4">LEG-2024-001</td>
               <td className="p-4">Acme Corp</td>
               <td className="p-4">NDA</td>
@@ -337,7 +342,9 @@ const Dashboard = () => {
                   In Review
                 </span>
               </td>
-              <td className="p-4">2024-10-29</td>
+              <td className="p-4">3</td>
+              <td className="p-4">-</td>
+              <td className="p-4">11/10/2024</td>
               <td className="p-4">
                 <div className="flex gap-2">
                   <Eye className="h-4 w-4 cursor-pointer" />
@@ -353,7 +360,9 @@ const Dashboard = () => {
                 <div className="flex gap-2">
                   <Pencil className="h-4 w-4 cursor-pointer" />
                   <Archive className="h-4 w-4 cursor-pointer" />
+                  {/* <OctagonMinusIcon className="h-4 w-4 cursor-pointer" /> */}
                 </div>
+                
               </td>
             </tr>
 
@@ -365,6 +374,7 @@ const Dashboard = () => {
                   className="rounded border-gray-300"
                 ></input>
               </td>
+              <td className="p-4">11/02/2024</td>
               <td className="p-4">LEG-2024-002</td>
               <td className="p-4">TechStart Inc</td>
               <td className="p-4">MSA</td>
@@ -375,7 +385,9 @@ const Dashboard = () => {
                   With Outside Counsel
                 </span>
               </td>
-              <td className="p-4">2024-10-29</td>
+              <td className="p-4">11</td>
+              <td className="p-4">11/14/2024</td>
+              <td className="p-4">11/02/2024</td>
               <td className="p-4">
                 <div className="flex gap-2">
                   <Eye className="h-4 w-4 cursor-pointer" />
@@ -391,6 +403,7 @@ const Dashboard = () => {
                 <div className="flex gap-2">
                   <Pencil className="h-4 w-4 cursor-pointer" />
                   <Archive className="h-4 w-4 cursor-pointer" />
+                  {/* <OctagonMinusIcon className="h-4 w-4 cursor-pointer" /> */}
                 </div>
               </td>
             </tr>
@@ -403,6 +416,7 @@ const Dashboard = () => {
                   className="rounded border-gray-300"
                 ></input>
               </td>
+              <td className="p-4">11/08/2024</td>
               <td className="p-4">LEG-2024-003</td>
               <td className="p-4">BuildRight LLC</td>
               <td className="p-4">COI</td>
@@ -413,7 +427,9 @@ const Dashboard = () => {
                   Sent to Broker
                 </span>
               </td>
-              <td className="p-4">2024-10-29</td>
+              <td className="p-4">4</td>
+              <td className="p-4">-</td>
+              <td className="p-4">11/08/2024</td>
               <td className="p-4">
                 <div className="flex gap-2">
                   <Eye className="h-4 w-4 cursor-pointer" />
@@ -429,6 +445,7 @@ const Dashboard = () => {
                 <div className="flex gap-2">
                   <Pencil className="h-4 w-4 cursor-pointer" />
                   <Archive className="h-4 w-4 cursor-pointer" />
+                  {/* <OctagonMinusIcon className="h-4 w-4 cursor-pointer" /> */}
                 </div>
               </td>
             </tr>
@@ -441,6 +458,7 @@ const Dashboard = () => {
                   className="rounded border-gray-300"
                 ></input>
               </td>
+              <td className="p-4">11/09/2024</td>
               <td className="p-4">LEG-2024-004</td>
               <td className="p-4">Global Services</td>
               <td className="p-4">Form Request</td>
@@ -451,7 +469,9 @@ const Dashboard = () => {
                   Pending Response
                 </span>
               </td>
-              <td className="p-4">2024-10-29</td>
+              <td className="p-4">3</td>
+              <td className="p-4">-</td>
+              <td className="p-4">11/09/2024</td>
               <td className="p-4">
                 <div className="flex gap-2">
                   <Eye className="h-4 w-4 cursor-pointer" />
@@ -479,6 +499,7 @@ const Dashboard = () => {
                   className="rounded border-gray-300"
                 ></input>
               </td>
+              <td className="p-4">10/29/2024</td>
               <td className="p-4">LEG-2024-005</td>
               <td className="p-4">Metro Systems</td>
               <td className="p-4">Sub Contract</td>
@@ -489,7 +510,9 @@ const Dashboard = () => {
                   Overdue
                 </span>
               </td>
-              <td className="p-4">2024-10-29</td>
+              <td className="p-4">14</td>
+              <td className="p-4">-</td>
+              <td className="p-4">10/29/2024</td>
               <td className="p-4">
                 <div className="flex gap-2">
                   <Eye className="h-4 w-4 cursor-pointer" />
@@ -517,6 +540,7 @@ const Dashboard = () => {
                   className="rounded border-gray-300"
                 ></input>
               </td>
+              <td className="p-4">11/11/2024</td>
               <td className="p-4">LEG-2024-006</td>
               <td className="p-4">TechIO</td>
               <td className="p-4">Contract</td>
@@ -527,7 +551,9 @@ const Dashboard = () => {
                   Received
                 </span>
               </td>
-              <td className="p-4">2024-10-29</td>
+              <td className="p-4">2</td>
+              <td className="p-4">-</td>
+              <td className="p-4">11/11/2024</td>
               <td className="p-4">
                 <div className="flex gap-2">
                   <Eye className="h-4 w-4 cursor-pointer" />
